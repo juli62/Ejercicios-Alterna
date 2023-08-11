@@ -1,0 +1,124 @@
+
+class Persona {
+
+    nombre: string = "";
+    salarioM: number = 0
+    salarioD: number = 0
+    
+    // el tiempo laborando se lee [Año,Meses,Dias]
+    tiempoLaborando = [0,0,0];
+    
+    //el tiempo laborado este año en meses y dias.
+    tiempoLaboradoActual = [0,0]
+    
+    preaviso: number = 0
+    preavisoValor: number = 0
+    cesantia: number = 0
+    cesantiaValor: number = 0
+    
+    vacacionesTomadas?: boolean
+    vacaciones: number = 0
+    vacacionesValor: number = 0
+    salarioNavidad: number = 0
+    salarioNavidadValor: number = 0
+    bonificacion: number = 0
+    bonificacionTotal: number = 0
+    
+}
+
+let roberto = new Persona
+
+roberto.nombre = "Roberto Santos"
+roberto.salarioM = 100000
+roberto.tiempoLaborando = [3,5,12]
+roberto.salarioD = roberto.salarioM / 23.83
+roberto.tiempoLaboradoActual = [7,6]
+
+const calcularPreaviso = (Persona) => {
+   if (Persona.tiempoLaborando[0] >= 1) {
+
+    Persona.preaviso += 28
+
+   }
+    Persona.preavisoValor = Persona.preaviso * Persona.salarioD
+
+    console.log(`El preaviso es: ${Persona.preavisoValor}`)
+}
+
+const calcularCesantia = (Persona) => {
+
+    if (Persona.tiempoLaborando[1] >=3) {
+        Persona.cesantia += 6
+    }
+    else if (Persona.tiempoLaborando[1] >= 6) {
+        Persona.cesantia += 13
+    }
+    if (Persona.tiempoLaborando[0] >= 1) {
+        Persona.cesantia += 21 * Persona.tiempoLaborando[0]
+    }
+    else if (Persona.tiempoLaborando[0] >= 5) {
+        Persona.cesantia += 23 * Persona.tiempoLaborando[0]
+    }
+    Persona.cesantiaValor = Persona.cesantia * Persona.salarioD
+    console.log(`Los dias de cesantia son: ${Persona.cesantia}`)
+    console.log(`El valor de la cesantia es de: ${Persona.cesantiaValor}`)
+}
+
+const calcularVacaciones = (Persona) => {
+   
+    if (Persona.tiempoLaborando[0] >= 1 && Persona.vacacionesTomadas != true) {
+        Persona.vacaciones = 14
+    }
+    else if (Persona.tiempoLaborando[0] >= 5 && Persona.vacacionesTomadas != true) {
+        Persona.vacaciones = 18
+    }
+    else if (Persona.vacaionesTomadas == true && Persona.tiempoLaborando[0] >=1) {
+        Persona.vacaciones = 6
+    }
+
+    Persona.vacacionesValor = Persona.vacaciones * Persona.salarioD
+
+    console.log(`Los dias de vacaiones son: ${Persona.vacaciones}`)
+    console.log(`El valor de las vacaciones es de: ${Persona.vacacionesValor}`)
+
+}
+
+const calcularNavidad = (Persona) =>{
+
+    Persona.salarioNavidad = Persona.tiempoLaboradoActual[0] * Persona.salarioM + Persona.tiempoLaboradoActual[1] * Persona.salarioD 
+   
+    Persona.salarioNavidadValor = Persona.salarioNavidad / 12
+
+    console.log(`El salario de navidad es: ${Persona.salarioNavidadValor}`)
+
+}
+
+const calcularBonificacion = (Persona) => {
+
+    if (Persona.tiempoLaborando[0] >= 1) {
+        Persona.bonificacion = 45
+    }
+    else if (Persona.tiempoLaborando[0] >= 3) {
+        Persona.bonificacion = 60
+    }
+
+    Persona.bonificacionTotal = Persona.bonificacion * Persona.salarioD
+    
+    console.log(`El PBE de la persona es: ${Persona.bonificacionTotal}`)
+
+
+}
+
+
+const calcularTotal = (Persona) => {
+
+    let total = Persona.preavisoValor + Persona.cesantiaValor + Persona.vacacionesValor + Persona.salarioNavidadValor
+    console.log(`El total a pagar es de: ${total}`)
+
+}
+calcularPreaviso(roberto)
+calcularCesantia(roberto)
+calcularVacaciones(roberto)
+calcularNavidad(roberto)
+calcularBonificacion(roberto)
+calcularTotal(roberto)

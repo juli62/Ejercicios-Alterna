@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let numero = prompt("Ingresar numero");
+
+
+
+        let centenas = parseInt(numero / 100);
+        let decenas = parseInt((numero % 100) / 10);
+        let unidades = parseInt((numero % 100) % 10);
+
+
+        let resultadoFinal = '';
+
+        if (centenas === 9) {
+            resultadoFinal = resultadoFinal + 'CM'
+        }
+        else if (centenas === 8) {
+            resultadoFinal = resultadoFinal + 'DCCC'
+        }
+        else if (centenas === 7) {
+            resultadoFinal = resultadoFinal + 'DCC'
+        }
+        else if (centenas === 6) {
+            resultadoFinal = resultadoFinal + 'DC'
+        }
+        else if (centenas === 5) {
+            resultadoFinal = resultadoFinal + 'D'
+        }
+        else if (centenas === 4) {
+            resultadoFinal = resultadoFinal + 'CD'
+        }
+        else if (centenas === 3) {
+            resultadoFinal = resultadoFinal + 'CCC'
+        }
+        else if (centenas === 2) {
+            resultadoFinal = resultadoFinal + 'CC'
+        }
+        else if (centenas === 1) {
+            resultadoFinal = resultadoFinal + 'C'
+        }
+
+        if (decenas === 9) {
+            resultadoFinal = resultadoFinal + 'XC'
+        }
+        else if (decenas === 8) {
+            resultadoFinal = resultadoFinal + 'LXXX'
+        }
+        else if (decenas === 7) {
+            resultadoFinal = resultadoFinal + 'LXX'
+        }
+        else if (decenas === 6) {
+            resultadoFinal = resultadoFinal + 'LX'
+        }
+        else if (decenas === 5) {
+            resultadoFinal = resultadoFinal + 'L'
+        }
+        else if (decenas === 4) {
+            resultadoFinal = resultadoFinal + 'XL'
+        }
+        else if (decenas === 3) {
+            resultadoFinal = resultadoFinal + 'XXX'
+        }
+        else if (decenas === 2) {
+            resultadoFinal = resultadoFinal + 'XX'
+        }
+        else if (decenas === 1) {
+            resultadoFinal = resultadoFinal + 'X'
+        }
+
+        if (unidades === 9) {
+            resultadoFinal = resultadoFinal + 'IX'
+        }
+        else if (unidades === 8) {
+            resultadoFinal = resultadoFinal + 'VIII'
+        }
+        else if (unidades === 7) {
+            resultadoFinal = resultadoFinal + 'VII'
+        }
+        else if (unidades === 6) {
+            resultadoFinal = resultadoFinal + 'VI'
+        }
+        else if (unidades === 5) {
+            resultadoFinal = resultadoFinal + 'V'
+        }
+        else if (unidades === 4) {
+            resultadoFinal = resultadoFinal + 'IV'
+        }
+        else if (unidades === 3) {
+            resultadoFinal = resultadoFinal + 'III'
+        }
+        else if (unidades === 2) {
+            resultadoFinal = resultadoFinal + 'II'
+        }
+        else if (unidades === 1) {
+            resultadoFinal = resultadoFinal + 'I'
+        }
+
+    </script>
+</body>
+
+</html>

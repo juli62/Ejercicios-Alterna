@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let nombre = "Julian"
+        // alert(nombre)
+        // let valorIntroducido = prompt("Introduzca un valor");
+        // let valorUno;
+        // if (!isNaN(valorIntroducido)) {
+        //     valorUno = parseFloat(valorIntroducido);
+        //     alert(valorIntroducido)
+        // }
+
+        // let valor = prompt("Introduzca un numero")
+
+        // if (!isNaN(valor)) {
+
+        //     if (valor % 2 == 0) {
+        //         alert("El numero es par, multiplicado por dos el resultado es: " + valor * 2)
+        //     }
+        //     else if (valor % 2 != 0) {
+
+        //         alert("El numero es impar, dividido por dos el resultado es: " + valor / 2)
+        //     }
+
+        // }
+
+        // else {
+        //     alert("Valor introducido no es un numero")
+
+        // }
+
+        var año = prompt("Introduzca un año")
+
+        if (!isNaN(año)) {
+            if (año % 4 == 0) {
+                alert("el año es bisiesto")
+            }
+            else if (año % 100 == 0 & año % 400 == 0) {
+                alert("el año es bisiesto")
+            }
+            else if (año % 4 == 0 & año % 100 != 0) {
+                alert("El año es bisiesto")
+            }
+            else {
+                alert("El año no es bisiesto")
+            }
+        }
+        else {
+            alert("El valor introducido no es un numero")
+        }
+    </script>
+</body>
+
+</html>

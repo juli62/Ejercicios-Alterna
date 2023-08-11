@@ -1,0 +1,24 @@
+let frase: string = "yo quIero tAcO bElL"
+console.log(`La frase antes de ser procesada es:  
+
+    ${frase}`)
+const titleCase = () => {
+    frase = frase.toLowerCase()
+    
+    let fraseChars = [...frase]
+    
+    for (let i = 0; i < frase.length; i++) {
+        
+        if (fraseChars[i-1] == " " || fraseChars[i] == fraseChars[0]) {
+            fraseChars[i] = fraseChars[i].toUpperCase()
+        }
+    }
+    
+    frase = fraseChars.join('')
+    console.log(`La frase luego de ser procesada es: 
+    
+     ${frase}`)
+
+}
+
+titleCase()

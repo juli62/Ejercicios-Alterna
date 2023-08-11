@@ -1,0 +1,16 @@
+
+let posicion1 = [2,6]
+console.log(posicion1)
+let posicion2 = [5,1]
+console.log(posicion2)
+
+let m = (posicion1, posicion2) => {
+    let calculo1:number = posicion2[1] - posicion1[1]
+    let calculo2:number = posicion2[0] - posicion1[0]
+
+    let resultado:number = calculo1/calculo2
+
+    console.log(`el resultado final es ${resultado}`)
+}
+
+m(posicion1, posicion2)

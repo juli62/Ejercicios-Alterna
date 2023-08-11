@@ -1,0 +1,36 @@
+
+
+class Vehiculo {
+
+    marca: string = ""
+    tipo: string = ""
+    numeroDePuertas: number = 0
+    numeroDeRuedas: number = 0
+
+    encender(): void {
+        console.log(`encendiendo... ${this.marca}` )
+    }
+
+    detener(): void {
+        console.log(`deteniendo... ${this.marca}`)
+    }
+
+    correr(): void {
+        console.log(`corriendo... ${this.marca}`)
+    }
+
+    informacion(): void {
+        console.log(`Marca ${this.marca}`)
+    }
+}
+
+const ferrari = new Vehiculo() 
+
+ferrari.marca = "Ferrari"
+ferrari.tipo = "Deportivo"
+ferrari.numeroDePuertas = 2
+ferrari.numeroDeRuedas = 4
+
+ferrari.encender()
+ferrari.correr()
+ferrari.detener()
